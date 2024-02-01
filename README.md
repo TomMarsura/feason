@@ -27,7 +27,7 @@ Utilisation d'une section **Fruit/Légumes** de saison et une section **Recettes
 
 ### Auteurs
 
-- [Tom MARSURA](test)
-- [Marwan LAHMAR](test)
-- [Lucas GOUDET](test)
-- [Matéo GALLAIS](test)
+- Tom MARSURA
+- Marwan LAHMAR
+- Lucas GOUDET
+- Matéo GALLAIS
