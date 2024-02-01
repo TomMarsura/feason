@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Feason est une application web qui permet aux utilisateurs de trouver des recettes de cuisine en fonction des fruits et légumes de saison et de leur localisation.
 
-## Available Scripts
+## Public cible
 
-In the project directory, you can run:
+Cette application vise des gens qui veulent manger sainement et local, mais qui ne savent pas toujours quoi cuisiner avec les fruits et légumes de saison.
 
-### `npm start`
+### Fonctionnalités
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Fonctionnalités importantes :
+    - Affiche les fruits et légumes de saison
+    - Propose des recettes adéquates
+- Fonctionnalités secondaires :
+    - Propose des recettes locales
+    - Possibilité de trier les recettes par temps de préparation ou par le matériel nécessaire
+    - Propose des recettes pour enfants
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Côté utilisateur
 
-### `npm test`
+Utilisation d'une section **Fruit/Légumes** de saison et une section **Recettes**, possibilité de cocher les recettes uniquement de saison ou non.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### API utilisés
 
-### `npm run build`
+- Récupération des recettes : Spoonacular
+- Traduction des instructions : Google Translate
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Auteurs
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Tom MARSURA](test)
+- [Marwan LAHMAR](test)
+- [Lucas GOUDET](test)
+- [Matéo GALLAIS](test)
