@@ -62,7 +62,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: normal;
+    fontfont-weight: normal;
 }
 
 .btn.border-secondary {
@@ -177,8 +177,29 @@
 /*** Navbar End ***/
 
 /*** Hero Header ***/
-.hero-header {
-    /*background: linear-gradient(rgba(248, 223, 173, 0.1), rgba(248, 223, 173, 0.1)), url(../img/hero-img.jpg);*/
+.hero-header-printemps {
+    background: linear-gradient(rgba(248, 223, 173, 0.1), rgba(248, 223, 173, 0.1)), url(../img/hero-spring.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-header-ete {
+    background: linear-gradient(rgba(248, 223, 173, 0.1), rgba(248, 223, 173, 0.1)), url(../img/hero-summer.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-header-automne {
+    background: linear-gradient(rgba(248, 223, 173, 0.1), rgba(248, 223, 173, 0.1)), url(../img/hero-autumn.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-header-hiver {
+    background: linear-gradient(rgba(248, 223, 173, 0.1), rgba(248, 223, 173, 0.1)), url(../img/hero-winter.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
