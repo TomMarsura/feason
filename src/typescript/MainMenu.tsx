@@ -10,12 +10,6 @@ function getSeason() {
     const day = now.getDate();
     const month = now.getMonth() + 1; // Les mois commencent à partir de 0
 
-    // Dates exactes pour chaque saison
-    const winterStart = new Date(now.getFullYear(), 11, 22); // 22 décembre
-    const springStart = new Date(now.getFullYear(), 2, 20);  // 20 mars
-    const summerStart = new Date(now.getFullYear(), 5, 20);  // 20 juin
-    const autumnStart = new Date(now.getFullYear(), 8, 22);  // 22 septembre
-
     // Vérifier la saison en fonction de la date actuelle
     if ((month === 12 && day >= 22) || (month === 1) || (month === 2 && day < 20)) {
         return "HIVER";
@@ -37,16 +31,6 @@ function MainMenu(){
     const heroStyle = "hero-header-".concat(season.toLowerCase());
 
     console.log(heroStyle);
-
-    const buttonStyle: React.CSSProperties = {
-        position: 'absolute',
-        top: 0,
-        right: '25%'
-    };
-
-    const paddStyle: React.CSSProperties = {
-        marginTop: '20px'
-    }
 
     return (
 
