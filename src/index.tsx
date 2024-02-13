@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css/index.css';
-import FormulaireLocaux from './typescript/FormulaireLocaux';
+import App from './typescript/pagefruitslegumes';
 import reportWebVitals from './reportWebVitals';
 
 
@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <FormulaireLocaux />
+    <App/>
   </React.StrictMode>
 );
 
