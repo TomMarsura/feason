@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css/index.css';
-import App from './typescript/pagefruitslegumes';
+import App from './typescript/App';
 import reportWebVitals from './reportWebVitals';
-
-
+import Recette from "./typescript/Recette";
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App/>
+    <Recette/>
   </React.StrictMode>
 );
 
