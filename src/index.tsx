@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css/index.css';
-import App from './typescript/App';
 import MainMenu from './typescript/MainMenu';
 import reportWebVitals from './reportWebVitals';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

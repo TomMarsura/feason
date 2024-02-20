@@ -11,13 +11,13 @@ function getSeason() {
     const month = now.getMonth() + 1; // Les mois commencent à partir de 0
 
     // Vérifier la saison en fonction de la date actuelle
-    if ((month === 12 && day >= 22) || (month === 1) || (month === 2) ||(month === 3 && day < 20)) {
+    if ((month === 12 && day >= 22) || (month === 1) || (month === 2) || (month === 3 && day < 20)) {
         return "HIVER";
     } else if ((month === 3 && day >= 20) || (month > 3 && month < 6) || (month === 6 && day < 20)) {
         return "PRINTEMPS";
     } else if ((month === 6 && day >= 20) || (month > 6 && month < 9) || (month === 9 && day < 22)) {
         return "ETE";
-    } else if ((month === 9 && day >= 22) || (month > 9 && month < 12) || (month === 11 && day < 22)) {
+    } else if ((month === 9 && day >= 22) || (month === 10) || (month === 11) || (month === 12 && day < 22)) {
         return "AUTOMNE";
     } else {
         return "Saison inconnue";
