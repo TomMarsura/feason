@@ -15,9 +15,14 @@ export default class PureCarousel extends React.Component {
                 totalSlides={6}
                 visibleSlides={3}
                 infinite={true}
+                isPlaying={true}
             >
-                <ButtonBack className="button">Back</ButtonBack>
-                <ButtonNext className="button">Next</ButtonNext>
+                <div className="vesitable"> {}
+                    <div className="owl-nav">
+                        <ButtonNext className={"owl-next pure-carousel-button"}>Next</ButtonNext>
+                        <ButtonBack className={"owl-prev pure-carousel-button"}>Back</ButtonBack>
+                    </div>
+                </div>
                 <Slider className="owl-stage">
                     <Slide index={0} className="owl-item"> <Product name={"Fraise"}/> </Slide>
                     <Slide index={1} className="owl-item"> <Product name={"Cerise"}/> </Slide>
