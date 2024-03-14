@@ -54,7 +54,7 @@ function FormulaireLocaux() {
                                 </Marker>
                             </MapContainer>
                         </section>
-                        <div className="col-lg-7">
+                        <div className="col-lg-7 mx-auto">
                             <form action="" className="">
                                 <input type="text" className="w-100 form-control border-0 py-3 mb-4"
                                        placeholder="Votre nom"></input>
