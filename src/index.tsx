@@ -17,10 +17,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-      <Navbar />
-        <MainMenu />
-        <Aliments/>
+      <Navbar/>
+      <MainMenu/>
       <Recette/>
+      <Aliments/>
       <FormulaireLocaux />
       <script src='bootstrap/dist/js/bootstrap.bundle.min.js' />
   </React.StrictMode>
