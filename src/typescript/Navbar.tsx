@@ -52,12 +52,6 @@ function navbar(){
                             <a href="shop-detail.html" className="nav-item nav-link">Aliments de saison</a>
                             <a href="shop-detail.html" className="nav-item nav-link">Producteurs locaux</a>
                         </div>
-
-                        <div className="d-flex m-3 me-0">
-                            <a href="#" className="my-auto">
-                                <i className="fa fa-star-half-stroke fa-2x"></i>
-                            </a>
-                        </div>
                     </div>
                 </nav>
             </div>

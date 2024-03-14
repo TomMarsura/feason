@@ -17,7 +17,7 @@ const Product: React.FC<VegetableProps> = ({name}) => {
         content = 'contenue par defaut'
     }
     return (
-        <div className="border border-primary rounded position-relative vesitable-item">
+        <div className="border border-primary rounded position-relative vesitable-item margeTop">
             <div className="vesitable-img">
                 <img src="img/vegetable-item-6.jpg" className="img-fluid w-100 rounded-top" alt=""/>
             </div>

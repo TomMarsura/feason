@@ -1,16 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css/index.css';
+import FormulaireLocaux from './typescript/FormulaireLocaux';
+import Navbar from './typescript/Navbar';
+import Aliments from './typescript/pagefruitslegumes';
 import MainMenu from './typescript/MainMenu';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap'
 
 
+
+
+import Recette from "./typescript/Recette";
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-      <MainMenu />
+      <Navbar />
+        <MainMenu />
+        <Aliments/>
+      <Recette/>
+      <FormulaireLocaux />
+      <script src='bootstrap/dist/js/bootstrap.bundle.min.js' />
   </React.StrictMode>
 );
 

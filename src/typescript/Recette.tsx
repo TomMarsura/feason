@@ -5,7 +5,7 @@ import EnTete from './enTete';
 import Container from './Container';
 function App() {
     return (
-        <div className="container-fluid fruite py-5">
+        <div className="container-fluid fruite py-5 margeTop">
             <div className="container py-5">
                 <div className="tab-className text-center">
                     <EnTete/>

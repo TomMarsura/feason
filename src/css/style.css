@@ -203,7 +203,6 @@
 
 .hero-header-hiver {
     background: linear-gradient(rgba(248, 223, 173, 0.1), rgba(248, 223, 173, 0.1)), url(../img/hero-winter.png);
->>>>>>> pageaccueil
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -244,16 +243,6 @@
 
 .page-header {
     position: relative;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /*background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/cart-page-header-img.jpg);*/
-    /*background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/cart-page-header-img.jpg);*/
-=======
- /*   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/cart-page-header-img.jpg); */
->>>>>>> pagerecettes
-=======
-    /*background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/cart-page-header-img.jpg);*/
->>>>>>> pageaccueil
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -566,4 +555,8 @@
     line-height: 35px;
 }
 /*** Footer End ***/
+
+.margeTop {
+    margin-top: 60px;
+}
 

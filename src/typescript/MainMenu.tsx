@@ -34,7 +34,7 @@ function MainMenu(){
 
     return (
 
-        <div className={"container-fluid py-5 mb-5 " + heroStyle}>
+        <div className={"container-fluid py-5 mb-5 margeTop " + heroStyle}>
             <div className="container py-5">
                 <div className="row g-5 align-items-center">
                     <div className="col-md-12 col-lg-7">

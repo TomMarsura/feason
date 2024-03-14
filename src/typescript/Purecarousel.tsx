@@ -9,29 +9,31 @@ import Product from "./Product";
 export default class PureCarousel extends React.Component {
     render() {
         return (
-            <CarouselProvider
-                naturalSlideWidth={100}
-                naturalSlideHeight={125}
-                totalSlides={6}
-                visibleSlides={3}
-                infinite={true}
-                isPlaying={true}
-            >
-                <div className="vesitable"> {}
-                    <div className="owl-nav">
-                        <ButtonNext className={"owl-next pure-carousel-button"}>Next</ButtonNext>
-                        <ButtonBack className={"owl-prev pure-carousel-button"}>Back</ButtonBack>
+            <div className="margeTop">
+                <CarouselProvider
+                    naturalSlideWidth={100}
+                    naturalSlideHeight={125}
+                    totalSlides={6}
+                    visibleSlides={3}
+                    infinite={true}
+                    isPlaying={true}
+                >
+                    <div className="vesitable"> {}
+                        <div className="owl-nav">
+                            <ButtonNext className={"owl-next pure-carousel-button"}>Next</ButtonNext>
+                            <ButtonBack className={"owl-prev pure-carousel-button"}>Back</ButtonBack>
+                        </div>
                     </div>
-                </div>
-                <Slider className="owl-stage">
-                    <Slide index={0} className="owl-item"> <Product name={"Fraise"}/> </Slide>
-                    <Slide index={1} className="owl-item"> <Product name={"Cerise"}/> </Slide>
-                    <Slide index={2} className="owl-item"> <Product name={"Pastèque"}/> </Slide>
-                    <Slide index={3} className="owl-item"> <Product name={"Betterave"}/> </Slide>
-                    <Slide index={4} className="owl-item"> 5 </Slide>
-                    <Slide index={5} className="owl-item"> 6 </Slide>
-                </Slider>
-            </CarouselProvider>
+                    <Slider className="owl-stage">
+                        <Slide index={0} className="owl-item"> <Product name={"Fraise"}/> </Slide>
+                        <Slide index={1} className="owl-item"> <Product name={"Cerise"}/> </Slide>
+                        <Slide index={2} className="owl-item"> <Product name={"Pastèque"}/> </Slide>
+                        <Slide index={3} className="owl-item"> <Product name={"Betterave"}/> </Slide>
+                        <Slide index={4} className="owl-item"> 5 </Slide>
+                        <Slide index={5} className="owl-item"> 6 </Slide>
+                    </Slider>
+                </CarouselProvider>
+            </div>
         );
     }
 }
