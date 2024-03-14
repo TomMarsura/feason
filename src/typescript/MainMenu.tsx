@@ -11,7 +11,7 @@ function getSeason() {
     const month = now.getMonth() + 1; // Les mois commencent à partir de 0
 
     // Vérifier la saison en fonction de la date actuelle
-    if ((month === 12 && day >= 22) || (month === 1) || (month === 2 && day < 20)) {
+    if ((month === 12 && day >= 22) || (month === 1) || (month === 2) ||(month === 3 && day < 20)) {
         return "HIVER";
     } else if ((month === 3 && day >= 20) || (month > 3 && month < 6) || (month === 6 && day < 20)) {
         return "PRINTEMPS";
