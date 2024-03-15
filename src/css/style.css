@@ -352,7 +352,7 @@
 
 /*** vesitable Start ***/
 .vesitable .vesitable-item {
-    height: 100%;
+    height: 50%;
     transition: 0.5s;
 }
 
@@ -560,3 +560,15 @@
     margin-top: 60px;
 }
 
+.scrollable-list {
+    max-height: 100px; /* Hauteur maximale de la liste */
+    overflow-y: auto; /* Activation de la barre de défilement verticale */
+    padding-right: 20px; /* Ajoute de l'espace pour la barre de défilement */
+}
+
+@media (min-width: 768px) {
+    .scrollable-list {
+        max-height: none; /* Retirez la hauteur maximale pour rendre la liste non scrollable */
+        overflow-y: visible; /* Affichez tous les éléments sans barre de défilement */
+    }
+}

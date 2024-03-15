@@ -5,7 +5,7 @@ import '../css/index.css'
 import '@fortawesome/fontawesome-free/css/all.css';
 import hero1 from '../img/hero-img-2.jpg';
 
-function getSeason() {
+export function getSeason() {
     const now = new Date();
     const day = now.getDate();
     const month = now.getMonth() + 1; // Les mois commencent à partir de 0

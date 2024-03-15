@@ -1,39 +1,62 @@
-import '@fortawesome/fontawesome-free/css/all.css';
-import "../css/bootstrap.min.css"
-import "../css/style.css"
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import Product from "./Product";
+import Axios, { AxiosResponse } from 'axios'; // Importez AxiosResponse
 
-export default class PureCarousel extends React.Component {
-    render() {
-        return (
-            <div className="margeTop">
-                <CarouselProvider
-                    naturalSlideWidth={100}
-                    naturalSlideHeight={125}
-                    totalSlides={6}
-                    visibleSlides={3}
-                    infinite={true}
-                    isPlaying={true}
-                >
-                    <div className="vesitable"> {}
-                        <div className="owl-nav">
-                            <ButtonNext className={"owl-next pure-carousel-button"}>Next</ButtonNext>
-                            <ButtonBack className={"owl-prev pure-carousel-button"}>Back</ButtonBack>
-                        </div>
+interface Ingredient {
+    name: string;
+    months: number[];
+    local: boolean;
+    url: string;
+}
+
+const actualMonth = new Date().getMonth();
+
+console.log(actualMonth);
+
+export default function PureCarousel() {
+    const [ingredients, setIngredients] = useState<Ingredient[]>([]); // Spécifiez le type comme un tableau d'ingrédients
+
+    useEffect(() => {
+        const fetchIngredients = async () => {
+            try {
+                const response: AxiosResponse<Ingredient[]> = await Axios.get('http://localhost:3200/ingredients'); // Spécifiez le type de la réponse Axios
+                setIngredients(response.data);
+            } catch (error) {
+                console.error('Error fetching ingredients:', error);
+            }
+        };
+
+        fetchIngredients();
+    }, []);
+
+    return (
+        <div className="margeTop">
+            <CarouselProvider
+                naturalSlideWidth={100}
+                naturalSlideHeight={125}
+                totalSlides={ingredients.filter(ingredient => ingredient.months.includes(actualMonth)).length} // Filtrer les ingrédients pour ne compter que ceux de la saison actuelle
+                visibleSlides={3}
+                infinite={true}
+                isPlaying={true}
+            >
+                <div className="vesitable">
+                    <div className="owl-nav">
+                        <ButtonNext className={"owl-next pure-carousel-button"}>Next</ButtonNext>
+                        <ButtonBack className={"owl-prev pure-carousel-button"}>Back</ButtonBack>
                     </div>
-                    <Slider className="owl-stage">
-                        <Slide index={0} className="owl-item"> <Product name={"Fraise"}/> </Slide>
-                        <Slide index={1} className="owl-item"> <Product name={"Cerise"}/> </Slide>
-                        <Slide index={2} className="owl-item"> <Product name={"Pastèque"}/> </Slide>
-                        <Slide index={3} className="owl-item"> <Product name={"Betterave"}/> </Slide>
-                        <Slide index={4} className="owl-item"> 5 </Slide>
-                        <Slide index={5} className="owl-item"> 6 </Slide>
-                    </Slider>
-                </CarouselProvider>
-            </div>
-        );
-    }
+                </div>
+                <Slider className="owl-stage">
+                    {ingredients.map((ingredient, index) => (
+                        (ingredient.months.includes(actualMonth)) ? (
+                        <Slide key={index} index={index} className="owl-item">
+                            <Product name={ingredient.name} months={ingredient.months} local={ingredient.local} url={ingredient.url}></Product>
+                        </Slide>
+                        ) : null
+                    ))}
+                </Slider>
+            </CarouselProvider>
+        </div>
+    );
 }
