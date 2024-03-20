@@ -24,8 +24,15 @@ export function getSeason() {
     }
 }
 
+interface MainMenuProps {
+    isRecetteVisible: boolean;
+    setIsRecetteVisible: (isVisible: boolean) => void;
+}
 
-function MainMenu(){
+
+function MainMenu(props: MainMenuProps){
+    const { isRecetteVisible, setIsRecetteVisible } = props; // Destructure props
+
     const season = getSeason();
 
     const heroStyle = "hero-header-".concat(season.toLowerCase());
@@ -43,7 +50,7 @@ function MainMenu(){
                             Bienvenue sur Feason, une application qui vous permet de découvrir de nouvelles recettes
                             avec des produits de saison et locaux.
                         </h4>
-                        <button
+                        <button onClick={() => setIsRecetteVisible(!isRecetteVisible)}
                             className="btn btn-primary border-2 border-secondary py-3 px-4 rounded-pill text-white h-100">
                             <span className="text-light fw-bold fs-5">Découvrir des recettes</span></button>
                     </div>
