@@ -61,9 +61,21 @@ function navbar(props: NavbarProps){
                     <div className="collapse navbar-collapse bg-white" id="navbarCollapse">
                         <div className="navbar-nav mx-auto">
                             <a href="index.html" className="nav-item nav-link active">Accueil</a>
-                            <a className="nav-item nav-link" onClick={() => setIsRecetteVisible(!isRecetteVisible)}>Recettes</a>
-                            <a className="nav-item nav-link" onClick={() => setIsAlimentsVisible(!isAlimentsVisible)}>Aliments de saison</a>
-                            <a className="nav-item nav-link" onClick={() => setIsLocauxVisible(!isLocauxVisible)}>Producteurs locaux</a>
+                            <a className={"nav-item nav-link" + (isRecetteVisible?" active":"")} onClick={() => {
+                                setIsRecetteVisible(true);
+                                setIsAlimentsVisible(false);
+                                setIsLocauxVisible(false);
+                            }}>Recettes</a>
+                            <a className={"nav-item nav-link" + (isAlimentsVisible?" active":"")} onClick={() => {
+                                setIsAlimentsVisible(true);
+                                setIsRecetteVisible(false);
+                                setIsLocauxVisible(false);
+                            }}>Aliments de saison</a>
+                            <a className={"nav-item nav-link" + (isLocauxVisible?" active":"")} onClick={() => {
+                                setIsLocauxVisible(true);
+                                setIsRecetteVisible(false);
+                                setIsAlimentsVisible(false);
+                            }}>Producteurs locaux</a>
                         </div>
                     </div>
                 </nav>
