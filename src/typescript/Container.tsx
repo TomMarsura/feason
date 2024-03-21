@@ -23,14 +23,14 @@ function Container({ vegan, vegetarian, healthy }: ContainerProps) {
         const fetchRecipes = async () => {
             try {
                 const response: AxiosResponse<ApiResponse> = await Axios.get('http://localhost:3200/recipes');
-                if (response.data && Array.isArray(response.data.recipes)) {
-                    setRecipes(response.data.recipes);
+                if (response.data && Array.isArray(response.data) && response.data.length > 0) {
+                    setRecipes(response.data[0].recipes);
                 }
             } catch (error) {
                 console.error('Error fetching recipes:', error);
             }
         };
-
+    
         fetchRecipes();
     }, []);
 
@@ -56,6 +56,7 @@ function Container({ vegan, vegetarian, healthy }: ContainerProps) {
                         <div className="row g-4">
                             {filteredRecipes.map((recipe, index) => (
                                 <Itemisation
+                                    time={recipe.readyInMinutes}
                                     key={index}
                                     title={recipe.title}
                                     image={recipe.image}
@@ -65,7 +66,6 @@ function Container({ vegan, vegetarian, healthy }: ContainerProps) {
                                         recipe.vegetarian ? "Végétarien" : null,
                                         recipe.veryHealthy ? "Healthy" : null
                                     ].filter(tag => tag !== null)) as string[]}
-                                    time={recipe.readyInMinutes}
                                 />
                             ))}
                         </div>
