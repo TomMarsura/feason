@@ -16,22 +16,49 @@ const root = ReactDOM.createRoot(
 
 // State declaration within the React functional component
 function App() { // Create a functional component named App
+
         const [isRecetteVisible, setIsRecetteVisible] = useState(false);
+        const [isAlimentsVisible, setIsAlimentsVisible] = useState(false);
+        const [isLocauxVisible, setIsLocauxVisible] = useState(false);
+
 
         return ( // Return the JSX for your application
             <React.StrictMode>
-                    <div><Navbar
-                        isRecetteVisible={isRecetteVisible}
-                        setIsRecetteVisible={setIsRecetteVisible}
-                    /></div>
-                    <div><MainMenu // Pass props to MainMenu
-                        isRecetteVisible={isRecetteVisible}
-                        setIsRecetteVisible={setIsRecetteVisible}
-                    /></div>
-                    {isRecetteVisible && <div id="recettes"><Recette /></div>} {/* Conditional render Recette */}
-                    <div><Aliments /></div>
-                    <div><FormulaireLocaux /></div>
+
+                    <div>
+                        <Navbar
+                            isRecetteVisible={isRecetteVisible}
+                            setIsRecetteVisible={setIsRecetteVisible}
+
+                            isAlimentsVisible={isAlimentsVisible}
+                            setIsAlimentsVisible={setIsAlimentsVisible}
+
+                            isLocauxVisible={isLocauxVisible}
+                            setIsLocauxVisible={setIsLocauxVisible}
+                        />
+                    </div>
+
+                    {!isRecetteVisible && !isAlimentsVisible && !isLocauxVisible && <div>
+                        <MainMenu // Pass props to MainMenu
+                            isRecetteVisible={isRecetteVisible}
+                            setIsRecetteVisible={setIsRecetteVisible}
+                        />
+                    </div>}
+
+                    {isRecetteVisible && <div id="recettes">
+                        <Recette />
+                    </div>}
+
+                    {isAlimentsVisible && <div>
+                        <Aliments />
+                    </div>}
+
+                    {isLocauxVisible && <div>
+                        <FormulaireLocaux />
+                    </div>}
+
                     <script src='bootstrap/dist/js/bootstrap.bundle.min.js' />
+
             </React.StrictMode>
         );
 }

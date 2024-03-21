@@ -8,10 +8,16 @@ import logo from '../img/logo.png';
 interface NavbarProps {
     isRecetteVisible: boolean;
     setIsRecetteVisible: (isVisible: boolean) => void;
+    isAlimentsVisible: boolean;
+    setIsAlimentsVisible: (isVisible: boolean) => void;
+    isLocauxVisible: boolean;
+    setIsLocauxVisible: (isVisible: boolean) => void;
 }
 
 function navbar(props: NavbarProps){
     const { isRecetteVisible, setIsRecetteVisible } = props;
+    const { isAlimentsVisible, setIsAlimentsVisible } = props;
+    const { isLocauxVisible, setIsLocauxVisible } = props;
 
     const logoStyle: React.CSSProperties = {
         width: '70px',
@@ -54,10 +60,10 @@ function navbar(props: NavbarProps){
                     </button>
                     <div className="collapse navbar-collapse bg-white" id="navbarCollapse">
                         <div className="navbar-nav mx-auto">
-                            <a className="nav-item nav-link active">Accueil</a>
+                            <a href="index.html" className="nav-item nav-link active">Accueil</a>
                             <a className="nav-item nav-link" onClick={() => setIsRecetteVisible(!isRecetteVisible)}>Recettes</a>
-                            <a className="nav-item nav-link">Aliments de saison</a>
-                            <a className="nav-item nav-link">Producteurs locaux</a>
+                            <a className="nav-item nav-link" onClick={() => setIsAlimentsVisible(!isAlimentsVisible)}>Aliments de saison</a>
+                            <a className="nav-item nav-link" onClick={() => setIsLocauxVisible(!isLocauxVisible)}>Producteurs locaux</a>
                         </div>
                     </div>
                 </nav>
