@@ -1,6 +1,8 @@
 import React from "react";
 import '../css/style.css';
 import '../css/bootstrap.min.css';
+import { getSeason } from "./MainMenu";
+import { monthToString } from "./Product";
 
 interface EnTeteProps {
     setVegan: (value: boolean) => void;
@@ -43,10 +45,13 @@ function EnTete({ setVegan, setVegetarian, setHealthy, vegan, vegetarian, health
         }
     };
 
+    let season = 'PRINTEMPS';
+
     return (
         <div className="row g-4">
             <div className="col-lg-4 text-start">
-                <h1>Nos recettes</h1>
+                <h1 className='display-5 text-secondary'>RECETTES {season === 'PRINTEMPS' ? 'DE ' + season : "D'" + season}</h1>
+                <h2 className='display-6 text-dark'>Mois de {monthToString(new Date().getMonth())}</h2>
             </div>
             <div className="col-lg-8 text-end">
                 <ul className="nav nav-pills d-inline-flex text-center mb-5">

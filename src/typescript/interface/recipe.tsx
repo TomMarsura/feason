@@ -17,6 +17,18 @@ export interface instruction {
     steps: step[]
 }
 
+export interface extended {
+    id: number,
+    aisle: string,
+    image: string,
+    consistence: string,
+    name: string,
+    nameClean: string,
+    original: string,
+    originalName: string,
+    amount: number,
+}
+
 export interface Recipe {
     vegetarian: boolean,
     vegan: boolean,
@@ -33,4 +45,5 @@ export interface Recipe {
     image: string,
     summary: string,
     analyzedInstructions: instruction[],
+    extendedIngredients: extended[]
 }

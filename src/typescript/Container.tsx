@@ -15,9 +15,31 @@ interface ApiResponse {
     recipes: Recipe[];
 }
 
+interface Ingredient {
+    name: string;
+    months: number[];
+}
+
+
+const actualMonth = new Date().getMonth();
+
 function Container({ vegan, vegetarian, healthy }: ContainerProps) {
     const [recipes, setRecipes] = useState<Recipe[]>([]);
     const [filteredRecipes, setFilteredRecipes] = useState<Recipe[]>([]);
+    const [ingredients, setIngredients] = useState<Ingredient[]>([]); // Spécifiez le type comme un tableau d'ingrédients
+
+    useEffect(() => {
+        const fetchIngredients = async () => {
+            try {
+                const response: AxiosResponse<Ingredient[]> = await Axios.get('http://localhost:3200/ingredients'); // Spécifiez le type de la réponse Axios
+                setIngredients(response.data);
+            } catch (error) {
+                console.error('Error fetching ingredients:', error);
+            }
+        };
+
+        fetchIngredients();
+    }, []);
 
     useEffect(() => {
         const fetchRecipes = async () => {
@@ -43,10 +65,30 @@ function Container({ vegan, vegetarian, healthy }: ContainerProps) {
             if ((vegan && !recipe.vegan) || (vegetarian && !recipe.vegetarian) || (healthy && !recipe.veryHealthy)) {
                 return false;
             }
-            return true;
+    
+            let ingredientsNames: string[] = [];
+    
+            // Parcours des instructions
+            recipe.analyzedInstructions.forEach(instruction => {
+                instruction.steps.forEach(step => {
+                    // Parcours des ingrédients de chaque étape
+                    step.ingredients.forEach(ingredient => {
+                        // Stockage du nom de l'ingrédient
+                        ingredientsNames.push(ingredient.name);
+                    });
+                });
+            });
+    
+            // Vérification si au moins un ingrédient est de saison
+            return ingredientsNames.some(ingredientName => {
+                console.log(ingredientName);
+                const ingredientInfo = ingredients.find(item => item.name.toLowerCase() === ingredientName.toLowerCase());
+                return ingredientInfo && ingredientInfo.months.includes(actualMonth);
+            });
         });
         setFilteredRecipes(filtered);
     }
+    
 
     return (
         <div className="tab-content">
