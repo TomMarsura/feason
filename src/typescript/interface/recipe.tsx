@@ -45,5 +45,6 @@ export interface Recipe {
     image: string,
     summary: string,
     analyzedInstructions: instruction[],
-    extendedIngredients: extended[]
+    extendedIngredients: extended[],
+    sourceUrl: string
 }

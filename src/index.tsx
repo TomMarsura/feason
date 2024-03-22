@@ -8,6 +8,7 @@ import MainMenu from './typescript/MainMenu';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap'
 import Recette from "./typescript/Recette";
+import RandomRecipe from './typescript/RandomRecette';
 
 
 const root = ReactDOM.createRoot(
@@ -43,6 +44,7 @@ function App() { // Create a functional component named App
                             isRecetteVisible={isRecetteVisible}
                             setIsRecetteVisible={setIsRecetteVisible}
                         />
+                        <RandomRecipe/>
                     </div>}
 
                     {isRecetteVisible && <div id="recettes">
