@@ -102,6 +102,7 @@ function Container({ vegan, vegetarian, healthy }: ContainerProps) {
                                     key={index}
                                     title={recipe.title}
                                     image={recipe.image}
+                                    source={recipe.sourceUrl}
                                     score={recipe.healthScore}
                                     tags={([
                                         recipe.vegan ? "Vegan" : null,
