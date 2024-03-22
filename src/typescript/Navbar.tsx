@@ -8,16 +8,22 @@ import logo from '../img/logo.png';
 interface NavbarProps {
     isRecetteVisible: boolean;
     setIsRecetteVisible: (isVisible: boolean) => void;
+
     isAlimentsVisible: boolean;
     setIsAlimentsVisible: (isVisible: boolean) => void;
+
     isLocauxVisible: boolean;
     setIsLocauxVisible: (isVisible: boolean) => void;
+
+    isAccueilVisible: boolean;
+    setIsAccueilVisible: (isVisible: boolean) => void;
 }
 
 function navbar(props: NavbarProps){
     const { isRecetteVisible, setIsRecetteVisible } = props;
     const { isAlimentsVisible, setIsAlimentsVisible } = props;
     const { isLocauxVisible, setIsLocauxVisible } = props;
+    const { isAccueilVisible, setIsAccueilVisible } = props;
 
     const logoStyle: React.CSSProperties = {
         width: '70px',
@@ -60,18 +66,26 @@ function navbar(props: NavbarProps){
                     </button>
                     <div className="collapse navbar-collapse bg-white" id="navbarCollapse">
                         <div className="navbar-nav mx-auto">
-                            <a href="index.html" className="nav-item nav-link active">Accueil</a>
+                            <a className={"nav-item nav-link" + (isAccueilVisible?" active":"")} onClick={() => {
+                                setIsAccueilVisible(true);
+                                setIsRecetteVisible(false);
+                                setIsAlimentsVisible(false);
+                                setIsLocauxVisible(false);
+                            }}>Accueil</a>
                             <a className={"nav-item nav-link" + (isRecetteVisible?" active":"")} onClick={() => {
+                                setIsAccueilVisible(false);
                                 setIsRecetteVisible(true);
                                 setIsAlimentsVisible(false);
                                 setIsLocauxVisible(false);
                             }}>Recettes</a>
                             <a className={"nav-item nav-link" + (isAlimentsVisible?" active":"")} onClick={() => {
+                                setIsAccueilVisible(false);
                                 setIsAlimentsVisible(true);
                                 setIsRecetteVisible(false);
                                 setIsLocauxVisible(false);
                             }}>Aliments de saison</a>
                             <a className={"nav-item nav-link" + (isLocauxVisible?" active":"")} onClick={() => {
+                                setIsAccueilVisible(false);
                                 setIsLocauxVisible(true);
                                 setIsRecetteVisible(false);
                                 setIsAlimentsVisible(false);

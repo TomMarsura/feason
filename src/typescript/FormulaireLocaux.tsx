@@ -42,14 +42,59 @@ function FormulaireLocaux() {
                             </div>
                         </div>
                         <section className='map-container'>
-                            <MapContainer center={[47.8312024,0.0713205]} zoom={ 16 } scrollWheelZoom={true} style={StyleMap}>
+                            <MapContainer center={[47.132566408653275, 2.5825470108068367]} zoom={ 5.5 } scrollWheelZoom={true} style={StyleMap}>
                                 <TileLayer
                                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                                 />
-                                <Marker position={[47.8312024,0.0713205]}>
+                                <Marker position={[47.55374794301189, -2.5552685009140124]}>
                                     <Popup>
-                                        MA MAISON
+                                        la Prairie de Rêverie
+                                    </Popup>
+                                </Marker>
+                                <Marker position={[47.827599607552074, 0.07770734541410604]}>
+                                    <Popup>
+                                        la Ferme du Perchoir
+                                    </Popup>
+                                </Marker>
+                                <Marker position={[47.74808515333334, -3.3723740875327683]}>
+                                    <Popup>
+                                        les Champs du Cochon Volant
+                                    </Popup>
+                                </Marker>
+                                <Marker position={[44.837887948220214, -0.5870451917902298]}>
+                                    <Popup>
+                                        les Acres des Nids d'Oiseaux
+                                    </Popup>
+                                </Marker>
+                                <Marker position={[48.74945729244509, 2.3503657653979233]}>
+                                    <Popup>
+                                        les Terres des Collines Endormies
+                                    </Popup>
+                                </Marker>
+                                <Marker position={[49.18261401712833, -0.36966852059505423]}>
+                                    <Popup>
+                                        le Vignoble de Beaux Rêves
+                                    </Popup>
+                                </Marker>
+                                <Marker position={[50.62887364023411, 3.0544480338843805]}>
+                                    <Popup>
+                                        les Jardins de la Falaise
+                                    </Popup>
+                                </Marker>
+                                <Marker position={[43.55393218206972, 7.0176902818962015]}>
+                                    <Popup>
+                                        les Fermes de la Montagne des Fraises
+                                    </Popup>
+                                </Marker>
+                                <Marker position={[48.57404265295967, 7.755553188830736]}>
+                                    <Popup>
+                                        les Fermes de Rochers
+                                    </Popup>
+                                </Marker>
+                                <Marker position={[45.56444310474964, 5.916136309473409]}>
+                                    <Popup>
+                                        les Acres du Chêne Blanc
                                     </Popup>
                                 </Marker>
                             </MapContainer>

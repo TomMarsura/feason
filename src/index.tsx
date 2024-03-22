@@ -21,9 +21,10 @@ function App() { // Create a functional component named App
         const [isRecetteVisible, setIsRecetteVisible] = useState(false);
         const [isAlimentsVisible, setIsAlimentsVisible] = useState(false);
         const [isLocauxVisible, setIsLocauxVisible] = useState(false);
+        const [isAccueilVisible, setIsAccueilVisible] = useState(true);
 
 
-        return ( // Return the JSX for your application
+    return ( // Return the JSX for your application
             <React.StrictMode>
 
                     <div>
@@ -36,6 +37,9 @@ function App() { // Create a functional component named App
 
                             isLocauxVisible={isLocauxVisible}
                             setIsLocauxVisible={setIsLocauxVisible}
+
+                            isAccueilVisible={isAccueilVisible}
+                            setIsAccueilVisible={setIsAccueilVisible}
                         />
                     </div>
 
