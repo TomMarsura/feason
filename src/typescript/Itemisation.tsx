@@ -10,9 +10,10 @@ interface Properties {
     score: number;
     tags: string[];
     time: number;
+    sourceUrl: string;
 }
 
-function Item({ title, image, score, tags, time }: Properties) {
+function Item({ title, image, score, tags, time, sourceUrl }: Properties) {
     const Style: React.CSSProperties = {
         top: '10px',
         left: '10px'
@@ -44,7 +45,7 @@ function Item({ title, image, score, tags, time }: Properties) {
                             <i className="fa fa-clock me-2 text-dark"></i>
                             {time}m
                         </p>
-                        <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary">
+                        <a href={sourceUrl} className="btn border border-secondary rounded-pill px-3 text-primary">
                             <i className="fa fa-list me-2 text-primary"></i> Voir recette
                         </a>
                     </div>
